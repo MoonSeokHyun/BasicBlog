@@ -18,5 +18,9 @@ public class BoardService {
         return  boardRepository.findAll();
     }
 
+    public void insert(Board board){
+        boardRepository.save(board);
+    }
+
 
 }
