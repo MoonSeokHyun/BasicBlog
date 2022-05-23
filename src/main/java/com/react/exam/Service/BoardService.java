@@ -22,5 +22,8 @@ public class BoardService {
         boardRepository.save(board);
     }
 
+    public Board boardView(Integer id){
+        return boardRepository.findById(id).get();
+    }
 
 }

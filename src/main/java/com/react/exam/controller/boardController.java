@@ -26,5 +26,13 @@ public class boardController {
         boardService.insert(board);
         System.out.println("완료");
     }
+
+    @GetMapping("/board/detail")
+    public Board detail(Integer id, Model model){
+        System.out.println(id);
+        System.out.println(boardService.boardView(id));
+        model.addAttribute("board",boardService.boardView(id));
+        return boardService.boardView(id);
+    }
     }
 
