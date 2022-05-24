@@ -21,17 +21,11 @@ public class boardController {
 
     @PostMapping("/board/insert")
     public void boardinsert(Board board){
-        System.out.println(board.getTitle());
-        System.out.println(board.getContent());
         boardService.insert(board);
-        System.out.println("완료");
     }
 
-    @GetMapping("/board/detail")
-    public Board detail(Integer id, Model model){
-        System.out.println(id);
-        System.out.println(boardService.boardView(id));
-        model.addAttribute("board",boardService.boardView(id));
+    @GetMapping("/board/detail/{id}")
+    public Board detail(@PathVariable Integer id){
         return boardService.boardView(id);
     }
     }
