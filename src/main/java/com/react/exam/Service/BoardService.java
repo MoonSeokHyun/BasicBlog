@@ -26,4 +26,8 @@ public class BoardService {
         return boardRepository.findById(id).get();
     }
 
+    public void delete(Integer id){
+        boardRepository.deleteById(id);
+    }
+
 }

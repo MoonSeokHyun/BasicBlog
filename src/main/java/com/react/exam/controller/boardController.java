@@ -28,5 +28,10 @@ public class boardController {
     public Board detail(@PathVariable Integer id){
         return boardService.boardView(id);
     }
+
+    @GetMapping("/board/delete")
+    public void delete(Integer id){
+    boardService.delete(id);
+    }
     }
 
