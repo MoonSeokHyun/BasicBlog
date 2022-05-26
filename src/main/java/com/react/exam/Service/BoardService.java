@@ -30,4 +30,8 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
+    public Integer modify(Board board){
+        return boardRepository.save(board).getId();
+    }
+
 }

@@ -32,6 +32,13 @@ public class boardController {
     @GetMapping("/board/delete")
     public void delete(Integer id){
     boardService.delete(id);
+        System.out.println("완료");
+    }
+    @PostMapping("/board/modify")
+    public Integer modify(Board board){
+        System.out.println(board.getId());
+        System.out.println(board.getContent());
+        return boardService.modify(board);
     }
     }
 
