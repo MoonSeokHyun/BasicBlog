@@ -3,6 +3,10 @@ package com.react.exam.controller;
 import com.react.exam.Service.BoardService;
 import com.react.exam.entity.Board;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +19,8 @@ public class boardController {
     @Autowired
     private BoardService boardService;
     @GetMapping("/board/list")
-    public List<Board> boardList(Model model){
+    public List<Board> boardList( ){
+
         return boardService.boardList();
     }
 
